@@ -2,4 +2,4 @@
 
 |Date|Version|Comment|
 |----|-------|-------|
-|PENDING|1.0.0|Initial release|
+|2024-Dec-13|1.0.0|Initial release|
