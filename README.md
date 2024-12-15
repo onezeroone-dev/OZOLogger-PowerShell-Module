@@ -35,7 +35,7 @@ $ozoLoggerObject.Write("This is a test message.","Information")
 
 ## Classes
 ### OZOLogger
-Calling the `New-OZOLogger` function returns an object of the `OZOLogger` class. This class contains one property and two methods.
+Calling the `New-OZOLogger` function returns an object of the `OZOLogger` class. This class contains one public property and two public methods.
 #### Properties
 
 |Property|Type|Description|
