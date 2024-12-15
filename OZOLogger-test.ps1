@@ -1,4 +1,4 @@
-Import-Module -Name (Join-Path -Path (Split-Path -Path $PSCommandPath -Parent) -ChildPath "OZOLogger")
+Import-Module -Name (Join-Path -Path $PSScriptRoot -ChildPath "OZOLogger")
 
 $ozoLoggerObject = New-OZOLogger
 #$ozoLoggerObject.SetConsoleOutput("off")
