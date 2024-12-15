@@ -55,7 +55,12 @@ Class OZOLogger {
 }
 
 Function New-OZOLogger() {
-    return [OZOLogger]::new((Split-Path -Path $MyInvocation.ScriptName -Leaf))
+    If ([String]::IsNullOrEmpty($MyInvocation.ScriptName)) {
+        return [OZOLogger]::new("Command-line input:")
+    } Else {
+        return [OZOLogger]::new(((Split-Path -Path $MyInvocation.ScriptName -Leaf) + ":"))
+    }
+    
 }
 
 Export-ModuleMember New-OZOLogger
