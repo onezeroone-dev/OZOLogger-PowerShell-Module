@@ -2,36 +2,43 @@
 This function is part of the [OZOLogger PowerShell Module](https://github.com/onezeroone-dev/OZOLogger-PowerShell-Module/blob/main/README.md).
 
 ## Description
-Provides a simpler (but less flexible) way to write to the One Zero One Windows Event Log provider (as compared the [New-OZOLogger](New-OZOLogger.md) method).
+Provides a simpler (but less flexible) way to write to the One Zero One Windows Event Log provider versus the [New-OZOLogger](New-OZOLogger.md) method.
 
 ## Syntax
 ```
 Write-OZOProvider
+    [-Level]
     -Message
-    -Level
+    [-WriteToConsole]
 ```
 
 ## Parameters
 |Parameter|Description|
 |---------|-----------|
-|`Message`|The message to write to the event.|
-|`Level`|The message level. When used with the [_One Zero One_ provider](https://www.powershellgallery.com/packages/ozo-windows-event-log-provider-setup), allowed values are _Information_, _Warning_, and _Error_. If you provide an invalid value, or if you have not implemented the _One Zero One_ event log provider, messages are written as Information events.|
+|`Level`|The message level. Allowed values are _Success_, _Information_, _Warning_, and _Error_. Invalid values will be handed as _Information_ events. Defaults to _Information_.|
+|`Message`|The message to write to the event provider.|
+|`WriteToConsole`|When specified, messages will be written to the console in addition to the provider.|
 
 ## Examples
 ## Example 1
 `````powershell
-Write-OZOProvider -Message "This is an informational message" -Level "Information"
+Write-OZOProvider -Message "This is a success message" -Level "Success"
 `````
 
 ## Example 2
 `````powershell
-Write-OZOProvider -Message "This is a warning message" -Level "Warning"
+Write-OZOProvider -Message "This is an information message" -Level "Information"
 `````
 
 ## Example 3
+`````powershell
+Write-OZOProvider -Message "This is a warning message" -Level "Warning"
+`````
+
+## Example 4
 `````powershell
 Write-OZOProvider -Message "This is an error message" -Level "Error"
 `````
 
 ## Reviewing Events
-See [Optional Prerequisite](../README.md#optional-prerequisite) and [Reviewing Events](../README.md#reviewing-events).
+See [optional prerequisite](../README.md#optional-prerequisite) and [reviewing events](../README.md#reviewing-events).
